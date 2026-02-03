@@ -25,6 +25,15 @@ document.getElementById("yesBtn").onclick = () => {
 document.getElementById("startQuiz").onclick = () => {
   show(screens.quiz);
   loadQuestion();
+
+  const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
 };
 
 // QUIZ DATA

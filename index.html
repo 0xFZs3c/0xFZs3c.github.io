@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Be My Valentine 💌</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- OPENING SCREEN -->
+<!-- START SCREEN -->
 <div id="start" class="screen active">
   <h1 class="fade-in">Linicha 🥺</h1>
   <h2 class="fade-in-delay">Would you be my Valentine? 🐶💘</h2>
-
   <div class="buttons">
     <button id="yesBtn">YES 💖</button>
     <button id="noBtn">NO 😤</button>
   </div>
 </div>
 
-<!-- REACTION SCREEN -->
+<!-- YAY SCREEN -->
 <div id="yay" class="screen">
   <h1 class="pop">YAYY! MUAHH 🎉💞</h1>
   <button id="startQuiz">Start Quiz</button>
@@ -31,9 +30,7 @@
   <div class="top-bar">
     Dattu Points: <span id="points">0</span>/3 💕
   </div>
-
   <h2 id="question"></h2>
-
   <div id="options" class="options"></div>
 </div>
 
@@ -45,7 +42,7 @@
       <div class="letter-content">
         <p>
           Hi babyy! 💕<br><br>
-          From the day I’ve proposed to you, I’ve never been more happier ever since.
+          From the day I’ve proposed to you, I’ve never been more happier ever since.<br>
           You make me smile each day and just a few words don’t explain how happy you make me
           or how much I appreciate your presence.<br><br>
           You’re indeed the best best friend and my best girlfriend &lt;3.<br>
@@ -56,9 +53,16 @@
     </div>
   </div>
 
-  <div class="image-row">
-    <div class="img-placeholder">Image 1</div>
-    <div class="img-placeholder">Image 2</div>
+  <div class="photos-container">
+    <div class="polaroid">
+      <img src="https://via.placeholder.com/600x800?text=Our+First+Date" alt="Us 1">
+      <p>Our first coffee date ☕</p>
+    </div>
+    <div class="polaroid tilted">
+      <img src="https://via.placeholder.com/600x800?text=Best+Hug" alt="Us 2">
+      <p>Best hug ever 🥰</p>
+    </div>
+    <!-- Add more if you want -->
   </div>
 </div>
 
@@ -71,4 +75,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-

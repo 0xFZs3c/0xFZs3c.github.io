@@ -78,3 +78,72 @@ button {
   font-size: 20px;
 }
 
+/* ENVELOPE */
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background: #ff4d6d;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff758f;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  transform-origin: top;
+  transition: transform 1s;
+}
+
+.letter-paper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 260px;
+  height: 160px;
+  background: #fff;
+  border-radius: 8px;
+  transform: translateY(100%);
+  transition: transform 1s;
+  overflow-y: auto;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter-paper {
+  transform: translateY(-20px);
+}
+
+/* LETTER TEXT */
+.letter-content {
+  padding: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* IMAGE PLACEHOLDERS */
+.image-row {
+  display: flex;
+  gap: 20px;
+}
+
+.img-placeholder {
+  width: 140px;
+  height: 180px;
+  background: #ffd6e0;
+  border: 2px dashed #ff4d6d;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff4d6d;
+  font-weight: bold;
+}
+

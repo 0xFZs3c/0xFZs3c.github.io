@@ -28,10 +28,24 @@ document.getElementById("startQuiz").onclick = () => {
 };
 
 // QUIZ DATA
+const optionsDiv = document.getElementById("options");
+
 const quiz = [
-  { q: "When did I propose to you?", a: "oct 28" },
-  { q: "When did we first kiss?", a: "dec 24" },
-  { q: "What's my favorite number?", a: "7" }
+  {
+    q: "When did I propose to you?",
+    options: ["Oct 28", "Nov 1", "Dec 24"],
+    answer: "Oct 28"
+  },
+  {
+    q: "When did we first kiss?",
+    options: ["Dec 24", "Jan 1", "Feb 14"],
+    answer: "Dec 24"
+  },
+  {
+    q: "What's my favorite number?",
+    options: ["3", "7", "21"],
+    answer: "7"
+  }
 ];
 
 let index = 0;
@@ -39,24 +53,36 @@ let points = 0;
 
 function loadQuestion() {
   document.getElementById("question").innerText = quiz[index].q;
-  document.getElementById("answer").value = "";
+  optionsDiv.innerHTML = "";
+
+  quiz[index].options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.className = "option-btn";
+
+    btn.onclick = () => {
+      if (opt === quiz[index].answer) {
+        btn.classList.add("correct");
+        points++;
+        document.getElementById("points").innerText = points;
+      } else {
+        btn.classList.add("wrong");
+      }
+
+      setTimeout(() => {
+        index++;
+        if (index < quiz.length) {
+          loadQuestion();
+        } else {
+          points === 3 ? show(screens.win) : show(screens.lose);
+        }
+      }, 800);
+    };
+
+    optionsDiv.appendChild(btn);
+  });
 }
 
-document.getElementById("submit").onclick = () => {
-  const ans = document.getElementById("answer").value.toLowerCase().trim();
-  if (ans === quiz[index].a) {
-    points++;
-    document.getElementById("points").innerText = points;
-  }
-
-  index++;
-
-  if (index < quiz.length) {
-    loadQuestion();
-  } else {
-    points === 3 ? show(screens.win) : show(screens.lose);
-  }
-};
 
 // ENVELOPE OPEN
 const envelope = document.getElementById("envelope");

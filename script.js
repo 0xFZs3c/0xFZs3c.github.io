@@ -16,13 +16,13 @@ let yesScale = 1;
 const noBtn = document.getElementById("noBtn");
 
 noBtn.addEventListener("mouseenter", () => {
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 200 - 100;
+  const x = Math.random() * 240 - 120;
+  const y = Math.random() * 240 - 120;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-document.getElementById("noBtn").onclick = () => {
-  yesScale += 0.2;
+noBtn.onclick = () => {
+  yesScale += 0.25;
   document.getElementById("yesBtn").style.transform = `scale(${yesScale})`;
 };
 
@@ -33,12 +33,9 @@ document.getElementById("yesBtn").onclick = () => {
 document.getElementById("startQuiz").onclick = () => {
   show(screens.quiz);
   loadQuestion();
-
 };
 
-// QUIZ DATA
-const optionsDiv = document.getElementById("options");
-
+// QUIZ DATA (update dates/numbers to real ones!)
 const quiz = [
   {
     q: "When did I propose to you?",
@@ -60,7 +57,22 @@ const quiz = [
 let index = 0;
 let points = 0;
 
+const optionsDiv = document.getElementById("options");
+const pointsEl = document.getElementById("points");
+
 function loadQuestion() {
+  if (index >= quiz.length) {
+    if (points === 3) {
+      show(screens.win);
+      setTimeout(() => {
+        document.getElementById("envelope").classList.add("open");
+      }, 800);
+    } else {
+      show(screens.lose);
+    }
+    return;
+  }
+
   document.getElementById("question").innerText = quiz[index].q;
   optionsDiv.innerHTML = "";
 
@@ -68,37 +80,28 @@ function loadQuestion() {
     const btn = document.createElement("button");
     btn.innerText = opt;
     btn.className = "option-btn";
-
     btn.onclick = () => {
       if (opt === quiz[index].answer) {
         btn.classList.add("correct");
         points++;
-        document.getElementById("points").innerText = points;
+        pointsEl.innerText = points;
       } else {
         btn.classList.add("wrong");
       }
 
       setTimeout(() => {
         index++;
-        if (index < quiz.length) {
-          loadQuestion();
-        } else {
-          points === 3 ? show(screens.win) : show(screens.lose);
-        }
-      }, 800);
+        loadQuestion();
+      }, 900);
     };
-
     optionsDiv.appendChild(btn);
   });
 }
 
-
-// ENVELOPE OPEN
+// ENVELOPE CLICK (optional fallback)
 const envelope = document.getElementById("envelope");
 if (envelope) {
   envelope.addEventListener("click", () => {
     envelope.classList.toggle("open");
   });
 }
-
-

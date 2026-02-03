@@ -42,17 +42,17 @@ const optionsDiv = document.getElementById("options");
 const quiz = [
   {
     q: "When did I propose to you?",
-    options: ["Oct 28", "Nov 1", "Dec 24"],
+    options: ["Oct 28", "Oct 29", "Oct 30"],
     answer: "Oct 28"
   },
   {
     q: "When did we first kiss?",
-    options: ["Dec 24", "Jan 1", "Feb 14"],
+    options: ["Dec 14", "Dec 24", "Dec 15"],
     answer: "Dec 24"
   },
   {
     q: "What's my favorite number?",
-    options: ["3", "7", "21"],
+    options: ["10", "7", "9"],
     answer: "7"
   }
 ];

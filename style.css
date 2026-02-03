@@ -269,3 +269,56 @@ button {
   color: #c2185b;
   font-size: 1.15rem;
 }
+
+/* Corner polaroids – smaller, fixed in corners */
+.corner-polaroid {
+  position: absolute;
+  width: 160px;               /* smaller than main ones */
+  background: white;
+  padding: 10px 10px 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1;                 /* behind envelope/center photos if needed */
+  transition: transform 0.5s ease;
+}
+
+.corner-polaroid:hover {
+  transform: scale(1.15) rotate(0deg) !important;
+  z-index: 10;
+  box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
+}
+
+.corner-polaroid img {
+  width: 100%;
+  height: auto;
+  border: 6px solid #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.corner-polaroid p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #c2185b;
+}
+
+/* Positioning */
+.left {
+  top: 15%;
+  left: 5%;
+  transform: rotate(-8deg);
+}
+
+.right {
+  top: 20%;
+  right: 5%;
+  transform: rotate(7deg);
+}
+
+/* Make sure envelope & main photos stay on top if overlap happens */
+.envelope, .photos-container {
+  position: relative;
+  z-index: 2;
+}

@@ -58,3 +58,12 @@ document.getElementById("submit").onclick = () => {
   }
 };
 
+// ENVELOPE OPEN
+const envelope = document.getElementById("envelope");
+if (envelope) {
+  envelope.addEventListener("click", () => {
+    envelope.classList.toggle("open");
+  });
+}
+
+

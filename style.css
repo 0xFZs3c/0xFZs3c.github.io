@@ -31,7 +31,7 @@ body {
   display: flex;
 }
 
-/* TYPOGRAPHY & ANIMATIONS */
+
 h1 {
   font-size: 3.8rem;
   color: #ff4d6d;
@@ -88,7 +88,7 @@ button {
 }
 #noBtn:hover { background: #444; }
 
-/* QUIZ OPTION BUTTONS — BIG & BEAUTIFUL */
+
 .option-btn {
   display: block;
   width: 100%;
@@ -156,7 +156,7 @@ button {
   75%      { transform: scale(1.04) rotate(3deg); }
 }
 
-/* TOP BAR */
+
 .top-bar {
   position: absolute;
   top: 20px;
@@ -165,7 +165,7 @@ button {
   color: #c2185b;
 }
 
-/* ENVELOPE */
+
 .envelope {
   position: relative;
   width: 360px;
@@ -228,7 +228,7 @@ button {
   color: #2d2d2d;
 }
 
-/* POLAROIDS */
+
 .photos-container {
   display: flex;
   flex-wrap: wrap;
@@ -270,16 +270,16 @@ button {
   font-size: 1.15rem;
 }
 
-/* Corner polaroids – smaller, fixed in corners */
+
 .corner-polaroid {
   position: absolute;
-  width: 160px;               /* smaller than main ones */
+  width: 160px;               
   background: white;
   padding: 10px 10px 30px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   border-radius: 8px;
   text-align: center;
-  z-index: 1;                 /* behind envelope/center photos if needed */
+  z-index: 1;                 
   transition: transform 0.5s ease;
 }
 
@@ -304,7 +304,7 @@ button {
   color: #c2185b;
 }
 
-/* Positioning */
+
 .left {
   top: 15%;
   left: 5%;
@@ -317,7 +317,7 @@ button {
   transform: rotate(7deg);
 }
 
-/* Make sure envelope & main photos stay on top if overlap happens */
+
 .envelope, .photos-container {
   position: relative;
   z-index: 2;

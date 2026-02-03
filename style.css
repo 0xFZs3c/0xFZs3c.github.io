@@ -147,3 +147,37 @@ button {
   font-weight: bold;
 }
 
+/* MCQ OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.option-btn {
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  background: white;
+  transition: 0.3s;
+}
+
+.option-btn:hover {
+  transform: scale(1.05);
+  background: #ffe5ec;
+}
+
+.option-btn.correct {
+  background: #4caf50;
+  color: white;
+}
+
+.option-btn.wrong {
+  background: #f44336;
+  color: white;
+}
+
+

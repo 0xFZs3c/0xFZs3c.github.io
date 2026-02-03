@@ -11,7 +11,7 @@ function show(screen) {
   screen.classList.add("active");
 }
 
-// YES / NO LOGIC
+
 let yesScale = 1;
 const noBtn = document.getElementById("noBtn");
 
@@ -35,7 +35,7 @@ document.getElementById("startQuiz").onclick = () => {
   loadQuestion();
 };
 
-// QUIZ DATA (update dates/numbers to real ones!)
+
 const quiz = [
   {
     q: "When did I propose to you?",
@@ -98,7 +98,6 @@ function loadQuestion() {
   });
 }
 
-// ENVELOPE CLICK (optional fallback)
 const envelope = document.getElementById("envelope");
 if (envelope) {
   envelope.addEventListener("click", () => {

@@ -18,19 +18,28 @@
     }
 
     
-    .myButton {
-      padding: 15px 30px;
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      background-color: #ff1493;
-      border: 2px solid white;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s, background-color 0.2s;
+    .agebtn {
+    position: absolute;
+    left: 278px;
+    top: 450px;
+    width: 400px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    font-weight: normal;
+    font-size: 16px;
+    border-radius: 0px;
+    transition: transform 0.28s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.28s ease,
+        background-color 0.2s ease;
     }
 
-    .myButton:hover {
+    .agebtn:hover {
       transform: scale(1.1);
       background-color: #ff85c1;
     }

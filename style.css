@@ -1,34 +1,32 @@
- body {
-      background-color: #ff69b4; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+body {
+  margin: 0;
+  background-color: #ff69b4; /* hot pink */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    
-    .agebtn {
-    position: absolute;
-    left: 278px;
-    top: 450px;
-    width: 400px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border: 2px solid black;
-    font-weight: normal;
-    font-size: 16px;
-    border-radius: 0px;
-    transition: transform 0.28s cubic-bezier(0.25, 0.8, 0.25, 1),
-        box-shadow 0.28s ease,
-        background-color 0.2s ease;
-    }
+.agebtn {
+  width: 400px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0px;
+  transition: transform 0.28s, background-color 0.2s, color 0.2s;
+}
 
-    .agebtn:hover {
-      background-color: #8e8e8ee6;
-      color: white;
-      transform: translate(-4.5px, -4.5px) !important;
-      box-shadow: 4.5px 4.5px 0px black;
-    }
+.agebtn:hover {
+  background-color: #8e8e8ee6;
+  color: white;
+  transform: translate(-4.5px, -4.5px);
+  box-shadow: 4.5px 4.5px 0px black;
+}

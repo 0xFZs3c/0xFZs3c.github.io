@@ -1,16 +1,15 @@
-function updateAge() {
-    const birthDate = new Date(2010, 2, 18);
-    const now = new Date();
-    const ageMs = now - birthDate;
-    const ageYears = ageMs / (1000 * 60 * 60 * 24 * 365.25);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Linicha BDAY Counter!</title>
+</head>
+<body>
 
-    const button = document.getElementById('ageButton');
-    if (button) {
-        button.textContent = `You just turned: ${ageYears.toFixed(12)} yo!`;
-    }
-}
+  <button class="agebtn" id="ageButton">Age: Loading...</button>
 
-window.addEventListener('load', function () {
-    updateAge();
-    setInterval(updateAge, 10);
-});
+  <script src="script.js"></script>
+</body>
+</html>

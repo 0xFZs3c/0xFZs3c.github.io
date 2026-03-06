@@ -6,7 +6,11 @@ function updateAge() {
 
     const button = document.getElementById('ageButton');
     if (button) {
-        button.textContent = `You just turned: ${ageYears.toFixed(12)} yo!`;
+        if (ageYears >= 16) {
+            button.textContent = `HAPPY BIRTHDAYYY!! -> ${ageYears.toFixed(2)}`;
+        } else {
+            button.textContent = `You just turned: ${ageYears.toFixed(12)} yo!`;
+        }
     }
 }
 

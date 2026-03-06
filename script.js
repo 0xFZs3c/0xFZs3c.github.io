@@ -12,5 +12,5 @@ function updateAge() {
 
 window.addEventListener('load', function () {
     updateAge();
-    setInterval(updateAge, 1000);
+    setInterval(updateAge, 10);
 });
